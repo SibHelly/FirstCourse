@@ -1,0 +1,25 @@
+all: compile link
+
+compile:
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\main.cpp -o main.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\Game.cpp -o game.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\State.cpp -o state.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\GameState.cpp -o gamestate.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\Entity.cpp -o entity.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\MenuState.cpp -o menustate.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\Button.cpp -o button.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\Player.cpp -o player.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\Movement.cpp -o movement.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\AnimationPlayer.cpp -o animationplayer.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\CollisionComponent.cpp -o collisioncomponent.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\PauseMenu.cpp -o pausemenu.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\Tile.cpp -o tile.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\TileMap.cpp -o tilemap.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\WinState.cpp -o winstate.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\LevelState.cpp -o levelstate.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\RulesState.cpp -o rulestate.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\ResultState.cpp -o resultstate.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\TextBox.cpp -o textbox.o
+	g++ -IC:\SFML-2.5.1\include -c CppFiles\TableState.cpp -o tablestate.o
+link:
+	g++ main.o game.o state.o gamestate.o entity.o menustate.o button.o player.o movement.o animationplayer.o collisioncomponent.o pausemenu.o tile.o tilemap.o winstate.o levelstate.o rulestate.o resultstate.o textbox.o tablestate.o -LC:\SFML-2.5.1\lib -o main -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system
