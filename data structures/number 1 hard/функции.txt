@@ -1,0 +1,85 @@
+/*if (temp && k % n == 0)
+        {
+            puts("----------------------------------------------------------------------------------------------------");
+            printf("                                          %d                                               \n", str);
+            puts("Вперед или выход? (f/e)");
+            do
+            {
+                yes = getchar();
+                getchar();
+            } while (yes != 'f' && yes != 'F' && yes != 'e' && yes != 'E');
+            if (yes == 'e' || yes == 'E')
+                exit = 1;                 // если выход прерываем считывание записей из файла
+            if (yes == 'f' || yes == 'F') // если следущая страница
+            {
+                str++;         // увеличиваем количество страниц
+                system("Cls"); // очищаем поле
+            }*/
+/*void *addOrdered(List *list, DataType data)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->individual = data;
+    newNode->prev = newNode->next = NULL;
+    Node *cur, *prev = NULL;
+    if (list->head == NULL)
+        list->head = newNode;
+    else
+    {
+        if (list->head->individual.count >= newNode->individual.count)
+        {
+            newNode->next = list->head;
+            newNode->next->prev = newNode;
+            list->head = newNode;
+        }
+        else
+        {
+            cur = list->head;
+            while (cur->next != NULL && cur->next->individual.count < newNode->individual.count)
+                cur = cur->next;
+            newNode->next = cur->next;
+            if (cur->next != NULL)
+                newNode->next->prev = newNode;
+            cur->next = newNode;
+            newNode->prev = cur;
+        }
+    }
+    list->size++;
+}*/
+
+/*
+void *addOrdered(List *list, DataType data)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->next = NULL;
+    newNode->prev = NULL;
+    Node *cur = list->head, *previous = NULL;
+    while (cur)
+    {
+        if (cur->individual.count < data.count)
+        {
+            previous = cur;
+            cur = cur->next;
+        }
+        else
+        {
+            cur = previous;
+            break;
+        }
+    }
+    if (cur)
+    {
+        newNode->individual = data;
+        newNode->next = cur->next;
+        cur->next = newNode;
+        newNode->prev = cur;
+        newNode->next->prev = newNode;
+        list->size++;
+    }
+    else
+    {
+        if (previous)
+            addBack(list, data);
+        else
+            addFront(list, data);
+    }
+}*/
